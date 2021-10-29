@@ -1,19 +1,21 @@
-# Technigo React Starter App
+# Happy Thoughts App
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+A Twitter-inspired app made with React and Technigo's API.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## Features
 
-## Usage
+- Design based on external guidelines, to practice following it as closely as possible.
+- Mobile-first responsive styling.
+- Use of flexbox for the layout.
+- User input ("happy thoughts") sorted from newest to oldest.
+- Use of the hooks useState and useEffect.
+- A like button including a counter.
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## Challenges and Lessons learned
 
-Alternatively, if you don't want a new git repo on your account;
+- Leaving all components in App.js was a mess. So I decided to put them into a separate component (Form.js).
+- The time constrains didn't allow for separate CSS components. Something to complete in the future.
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## View it live
+
+https://isabel-gonzalez-happy-thoughts.netlify.app/
