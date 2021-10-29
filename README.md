@@ -1,13 +1,21 @@
-# Happy Thoughts
+# Happy Thoughts App
 
-Replace this readme with your own information about your project.
+A Twitter-inspired app made with React and Technigo's API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Features
 
-## The problem
+- Design based on external guidelines, to practice following it as closely as possible.
+- Mobile-first responsive styling.
+- Use of flexbox for the layout.
+- User input ("happy thoughts") sorted from newest to oldest.
+- Use of the hooks useState and useEffect.
+- A like button including a counter.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Challenges and Lessons learned
+
+- Leaving all components in App.js was a mess. So I decided to put them into a separate component (Form.js).
+- The time constrains didn't allow for separate CSS components. Something to complete in the future.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://isabel-gonzalez-happy-thoughts.netlify.app/
