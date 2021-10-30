@@ -1,4 +1,5 @@
 import React from 'react';
+import CharacterCounter from './CharacterCounter';
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
@@ -14,19 +15,22 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
-      <button
-        className='send-thought'
-        disabled={newThought.length < 5}
-        type='submit'
-      >
-        <span role='img' aria-label='heart'>
-          ❤️&ensp;
-        </span>
-        Send happy thought
-        <span role='img' aria-label='heart'>
-          &ensp;❤️
-        </span>
-      </button>
+      <div className='under-input'>
+        <button
+          className='send-thought'
+          disabled={newThought.length < 5 || newThought.length > 140}
+          type='submit'
+        >
+          <span role='img' aria-label='heart'>
+            ❤️&ensp;
+          </span>
+          Send happy thought
+          <span role='img' aria-label='heart'>
+            &ensp;❤️
+          </span>
+        </button>
+        <CharacterCounter characterCount={newThought.length} />
+      </div>
     </form>
   );
 };

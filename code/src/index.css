@@ -67,6 +67,11 @@ input {
   width: 60%;
 }
 
+.under-input {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
 /* ----------------------------------------------- */
 /*                     THOUGHTS			           */
 /* ----------------------------------------------- */
