@@ -102,6 +102,34 @@ input {
   justify-content: space-between;
 }
 
+.user-input {
+  height: 5vh;
+}
+
+.user-text-container {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 5%;
+  width: 80%;
+}
+
+.send-userName {
+  background: var(--secondary);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  font-family: 'Inconsolata';
+  font-weight: 600;
+  text-align: left;
+  margin-left: 1%;
+  padding: 1%;
+  width: 20%;
+}
+
 .date {
   color: rgb(167, 160, 160);
 }
@@ -193,6 +221,10 @@ input {
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
+  }
+
+  .send-userName {
+    width: 10%;
   }
 
   .likes-button {

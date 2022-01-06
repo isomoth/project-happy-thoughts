@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import ThoughtForm from './ThoughtForm';
+import UserForm from './UserForm';
 import ThoughtItem from './ThoughtItem';
 import LoadingItem from './LoadingItem';
 
-import { API_URL, LIKES_URL } from '../utils/urls';
+import { API_URL, LIKES_URL, USER_URL } from '../utils/urls';
 
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
+  const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -29,9 +31,9 @@ export const Form = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought })
     };
 
     fetch(API_URL, options)
@@ -41,9 +43,27 @@ export const Form = () => {
       });
   };
 
-  const handleLikesIncrease = (thoughtId) => {
+  const handleUserSubmit = (event) => {
+    event.preventDefault();
+
     const options = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: userName })
+    };
+
+    fetch(USER_URL, options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
+  };
+
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'POST'
     };
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
@@ -61,7 +81,11 @@ export const Form = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-
+      <UserForm
+        onUserSubmit={handleUserSubmit}
+        newUser={userName}
+        setUserName={setUserName}
+      />
       {thoughts.map((thought) => (
         <ThoughtItem
           key={thought._id}

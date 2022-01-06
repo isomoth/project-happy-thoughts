@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const ThoughtItem = ({ thought, onLikesIncrease }) => {
+const ThoughtItem = ({ thought, user, onLikesIncrease }) => {
   return (
     <div className='text-container'>
       <p>{thought.message}</p>
@@ -19,6 +19,7 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
           <p>x {thought.hearts}</p>
         </span>
         <p className='date'>{moment(thought.createdAt).fromNow()}</p>
+        <p className='user'>by {thought.name}</p>
       </div>
     </div>
   );
