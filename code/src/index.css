@@ -88,7 +88,7 @@ input {
 
 .likes-counter {
   display: inline-flex;
-  column-gap: 10px;
+  column-gap: 2px;
 }
 
 .likes-button {
@@ -99,7 +99,7 @@ input {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   height: 40px;
-  margin-top: 3px;
+  margin-top: 1px;
   width: 40px;
 }
 
@@ -110,6 +110,7 @@ input {
 .thought-data {
   display: inline-flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .user-input {
@@ -209,6 +210,9 @@ input {
     margin-right: auto;
     width: 50%;
   }
+  .thought-data {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -231,6 +235,10 @@ input {
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
+  }
+
+  .thought-data {
+    font-size: 20px;
   }
 
   .send-userName {
