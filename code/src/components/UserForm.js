@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 
 const UserForm = ({ onUserSubmit, newUser, setUserName }) => {
   return (
@@ -27,3 +27,4 @@ const UserForm = ({ onUserSubmit, newUser, setUserName }) => {
 };
 
 export default UserForm;
+ */

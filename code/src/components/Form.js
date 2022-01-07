@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import ThoughtForm from './ThoughtForm';
-import UserForm from './UserForm';
+// import UserForm from './UserForm';
 import ThoughtItem from './ThoughtItem';
 import LoadingItem from './LoadingItem';
 
-import { API_URL, LIKES_URL, USER_URL } from '../utils/urls';
+import { API_URL, LIKES_URL } from '../utils/urls';
 
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -33,7 +33,7 @@ export const Form = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ message: newThought, name: userName })
     };
 
     fetch(API_URL, options)
@@ -42,7 +42,7 @@ export const Form = () => {
         fetchThoughts();
       });
   };
-
+  /* 
   const handleUserSubmit = (event) => {
     event.preventDefault();
 
@@ -54,12 +54,12 @@ export const Form = () => {
       body: JSON.stringify({ name: userName })
     };
 
-    fetch(USER_URL, options)
+    fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
       });
-  };
+  }; */
 
   const handleLikesIncrease = (thoughtId) => {
     const options = {
@@ -78,14 +78,16 @@ export const Form = () => {
       {loading && <LoadingItem />}
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
+        /* onUserSubmit={handleUserSubmit} */
         newThought={newThought}
         setNewThought={setNewThought}
+        setUserName={setUserName}
       />
-      <UserForm
+      {/*  <UserForm
         onUserSubmit={handleUserSubmit}
         newUser={userName}
         setUserName={setUserName}
-      />
+      /> */}
       {thoughts.map((thought) => (
         <ThoughtItem
           key={thought._id}
