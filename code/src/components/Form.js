@@ -13,6 +13,11 @@ export const Form = () => {
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const resetData = () => {
+    setNewThought('');
+    setUserName('');
+  };
+
   useEffect(() => {
     fetchThoughts();
   }, []);
@@ -40,7 +45,8 @@ export const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
-      });
+      })
+      .then(() => resetData());
   };
   /* 
   const handleUserSubmit = (event) => {

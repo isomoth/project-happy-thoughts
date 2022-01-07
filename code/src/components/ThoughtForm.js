@@ -5,7 +5,6 @@ const ThoughtForm = ({
   onFormSubmit,
   newThought,
   setNewThought,
-  onUserSubmit,
   newUser,
   setUserName
 }) => {
