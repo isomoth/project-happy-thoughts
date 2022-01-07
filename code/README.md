@@ -1,10 +1,10 @@
 # Happy Thoughts App
 
-A Twitter-inspired app made with React and Technigo's API.
+A Twitter-inspired app made with React. It fetches data from my own backend API (link at the end of this document).
 
 ## Features
 
-- Design based on external guidelines, to practice following it as closely as possible.
+- Design based on external guidelines, to practice following it as closely as possible. (NOTE: The UI is based on Technigo's own design.)
 - Mobile-first responsive styling.
 - Use of flexbox for the layout.
 - User input ("happy thoughts") sorted from newest to oldest.
@@ -18,4 +18,5 @@ A Twitter-inspired app made with React and Technigo's API.
 
 ## View it live
 
-https://isabel-gonzalez-happy-thoughts.netlify.app/
+Frontend: https://isabel-gonzalez-happy-thoughts.netlify.app/
+Backend: https://happy-thoughts-api-isabel.herokuapp.com/thoughts

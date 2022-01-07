@@ -67,6 +67,16 @@ input {
   width: 60%;
 }
 
+.send-thought:hover {
+  background-color: #f6c6c6;
+  cursor: pointer;
+}
+
+.send-thought:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .under-input {
   display: inline-flex;
   justify-content: space-between;

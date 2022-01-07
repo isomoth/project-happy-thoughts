@@ -13,10 +13,10 @@ export const Form = () => {
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
-  /* const resetData = () => {
+  const resetData = () => {
     setNewThought('');
     setUserName('');
-  }; */
+  };
 
   useEffect(() => {
     fetchThoughts();
@@ -46,8 +46,7 @@ export const Form = () => {
       .then((data) => {
         fetchThoughts();
       });
-    setThoughts('');
-    setUserName('');
+    resetData();
   };
 
   const handleLikesIncrease = (thoughtId) => {
