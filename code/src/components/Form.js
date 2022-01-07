@@ -13,10 +13,10 @@ export const Form = () => {
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const resetData = () => {
+  /* const resetData = () => {
     setNewThought('');
     setUserName('');
-  };
+  }; */
 
   useEffect(() => {
     fetchThoughts();
@@ -45,27 +45,10 @@ export const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
-      })
-      .then(() => resetData());
-  };
-  /* 
-  const handleUserSubmit = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name: userName })
-    };
-
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts();
       });
-  }; */
+    setThoughts('');
+    setUserName('');
+  };
 
   const handleLikesIncrease = (thoughtId) => {
     const options = {
