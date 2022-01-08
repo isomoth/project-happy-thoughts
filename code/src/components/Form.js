@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL, LIKES_URL } from '../utils/urls';
 
 import ThoughtForm from './ThoughtForm';
-// import UserForm from './UserForm';
 import ThoughtItem from './ThoughtItem';
 import LoadingItem from './LoadingItem';
-
-import { API_URL, LIKES_URL } from '../utils/urls';
 
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -13,15 +11,11 @@ export const Form = () => {
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const resetData = () => {
-    setNewThought('');
-    setUserName('');
-  };
-
   useEffect(() => {
     fetchThoughts();
   }, []);
 
+  // Initial fetch to display the latest 20 messages
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)
@@ -45,8 +39,9 @@ export const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought('');
+        setUserName('');
       });
-    resetData();
   };
 
   const handleLikesIncrease = (thoughtId) => {
@@ -66,16 +61,11 @@ export const Form = () => {
       {loading && <LoadingItem />}
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
-        /* onUserSubmit={handleUserSubmit} */
         newThought={newThought}
         setNewThought={setNewThought}
+        userName={userName}
         setUserName={setUserName}
       />
-      {/*  <UserForm
-        onUserSubmit={handleUserSubmit}
-        newUser={userName}
-        setUserName={setUserName}
-      /> */}
       {thoughts.map((thought) => (
         <ThoughtItem
           key={thought._id}
