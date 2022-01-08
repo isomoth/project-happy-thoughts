@@ -5,7 +5,7 @@ const ThoughtForm = ({
   onFormSubmit,
   newThought,
   setNewThought,
-  newUser,
+  userName,
   setUserName
 }) => {
   return (
@@ -18,18 +18,17 @@ const ThoughtForm = ({
       <input
         id='newThought'
         type='text'
-        name='thoughtInput'
+        // name='thoughtInput'
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
-      {/*  Maybe an input field for the user in here? */}
       <label htmlFor='newUser'>Your name (optional): </label>
       <input
         className='user-input'
         id='newUser'
         type='text'
-        name='userInput'
-        value={newUser}
+        // name='userInput'
+        value={userName}
         onChange={(e) => setUserName(e.target.value)}
       />
       <div className='under-input'>
