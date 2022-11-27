@@ -1,4 +1,4 @@
 export const API_URL =
-  'https://happy-thoughts-api-isabel.herokuapp.com/thoughts';
+  'https://project-happy-thoughts-api-a2qgymy7ka-lz.a.run.app/thoughts';
 export const LIKES_URL = (thoughtId) =>
-  `https://happy-thoughts-api-isabel.herokuapp.com/thoughts/${thoughtId}/like`;
+  `https://project-happy-thoughts-api-a2qgymy7ka-lz.a.run.app/thoughts/${thoughtId}/like`;

@@ -19,4 +19,4 @@ A Twitter-inspired app made with React. It fetches data from my own backend API 
 ## View it live
 
 Frontend: https://isabel-gonzalez-happy-thoughts.netlify.app/
-Backend: https://happy-thoughts-api-isabel.herokuapp.com/thoughts
+Backend: https://project-happy-thoughts-api-a2qgymy7ka-lz.a.run.app/
